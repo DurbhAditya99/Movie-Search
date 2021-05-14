@@ -1,0 +1,47 @@
+<style>
+    h1 {text-align: center;}
+    h5 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    button {text-align: center;}
+    </style>
+<nb-layout>
+
+<nb-layout-header>DURBHA ADITYA</nb-layout-header>
+
+<nb-layout-column>
+   <h5> <button routerLink="/bookmark" routerLinkActive="active" class="button" type="button">Boomarks</button></h5>
+
+    <div class="container-fluid">
+    <form (ngSubmit)="search(f)" #f="ngForm">
+        <div class="form-group">
+           <h1>MOVIE FINDER</h1>
+        <input class="form-control" type="text" name="title" placeholder="Movie title" required ngModel #title="ngModel">
+        </div>
+        <button class="btn btn-primary btn-block" [disabled]="f.invalid" type="submit">Search</button>
+    </form> 
+
+  
+<ul *ngFor= "let mov of MovieList">
+<li>
+    <nb-card>
+        <nb-card-header><h3>MOVIE TITLE: {{mov.Title}}</h3></nb-card-header>
+        <nb-card-body>
+          <br>
+        <img src= {{mov.Poster}}><br> 
+        <button class="btn btn-primary btn-block" type="submit" (click)="save(mov)">Bookmark</button>
+        <H3>RATING:</H3>
+        <ul *ngFor= "let m of mov.Ratings">
+            
+            <li>{{m['Source']}}-{{m['Value']}}</li>
+        </ul>
+        </nb-card-body>
+        <nb-card-footer><h1>YEAR OF RELEASE {{mov.Year}}</h1> </nb-card-footer>
+      </nb-card>
+</li>
+</ul>
+</div>
+</nb-layout-column>
+
+</nb-layout>
+

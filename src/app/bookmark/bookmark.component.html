@@ -1,0 +1,13 @@
+<h1>YOUR BOOKMARKS!!</h1>
+<body>
+<ul *ngFor="let obj of BML">
+    <li>{{ obj.Title}}</li>
+    <li>{{ obj.Year}}</li>
+    <ul *ngFor="let o of obj.Ratings">
+    <li> {{o['Source']}}-{{o['Value']}}</li>
+    </ul>
+    <li><img src={{obj.Poster}}></li>
+    <button (click)='DeleteBM(obj.Title)'> Delete</button>
+    <br><br><br>
+</ul>
+</body>

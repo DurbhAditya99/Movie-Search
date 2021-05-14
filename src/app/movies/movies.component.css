@@ -1,0 +1,11 @@
+nb-card{
+    background-color: black;
+    color : white;
+    width: 20.5%;
+   
+}
+nb-layout-column{
+    background-image: url('./famous-movie-quotes.jpg');
+    background-repeat: repeat;
+    background-size: 100%;
+}
